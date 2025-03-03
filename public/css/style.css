@@ -59,6 +59,21 @@ button:hover {
   background: #444;
 }
 
+.saving-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.donation-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.donation-card small {
+  color: #666;
+}
+
 .admin-table {
   width: 100%;
   border-collapse: collapse;
