@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS tabungan_db;
-USE tabungan_db;
+CREATE DATABASE IF NOT EXISTS tabungann_db;
+USE tabungann_db;
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
