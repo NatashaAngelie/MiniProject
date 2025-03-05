@@ -10,23 +10,20 @@ class SavingController {
         $this->savingModel = new Saving($this->db);
     }
 
-    public function index() {
-        if(!isset($_SESSION['user_id'])) {
-            header('Location: login');
-            exit();
-        }
-
+    public function index(){
+        require_once 'app/helpers/AuthMiddleware.php';
+        $userId = AuthMiddleware::getuserId();
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $amount = $_POST['amount'];
-            $message = $_POST['message'];
-            $user_id = $_SESSION['user_id'];
+            $message = $_POST['message'];    
 
-            if($this->savingModel->create($user_id, $amount, $message)) {
-                header('Location: home');
-                exit();
+        //  $userId = $_SESSION['user_id'];
+         if ($this->savingModel->create($userId, $amount, $message)) { // FIX: pakai $userId
+            header('Location: home');
+            exit();
             }
         }
-
+        
         require_once 'app/views/save.php';
     }
 }

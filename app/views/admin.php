@@ -4,16 +4,16 @@
     <title>Admin Dashboard - Mini Tabungan</title>
     <link rel="stylesheet" href="public/css/style.css">
 </head>
-<body>
-    <nav>
+<body class="yellow-body">
+    <nav class="yellow-nav">
         <h1>Mini Tabungan - Admin Dashboard</h1>
         <div>
-            <a href="home">Home</a>
-            <a href="logout">Logout</a>
+            <a class="yellow-green-nav-a" href="home">Home</a>
+            <a class="yellow-green-nav-a" href="logout">Logout</a>
         </div>
     </nav>
 
-    <main>
+    <main class="yellow-main">
         <h2>Users</h2>
         <table class="admin-table">
             <thead>

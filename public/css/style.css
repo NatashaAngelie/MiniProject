@@ -4,14 +4,154 @@
   box-sizing: border-box;
 }
 
+.pink-body{
+  background-image: url(background.jpeg);
+  background-size: cover;
+  overflow: hidden;
+}
+.pink-main{
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+  border-radius: 30px;
+}
+.pink-nav{
+  background: rgb(255, 200, 200);
+  color: white;
+}
+.pink-nav-a{
+  font-weight: bold;
+  color: white;
+}
+.pink-nav-a:hover{
+  color: rgb(121, 121, 121); 
+}
+.pink-input{
+  border-radius: 10px;
+  border: 2px solid rgb(255, 200, 200); 
+}
+.pink-input:focus{
+  border: 2px solid rgb(255, 200, 200); 
+  background-color:rgb(209, 241, 255); 
+  border-radius: 10px;
+  outline: none;
+}
+.pink-button{
+  background-color: rgb(255, 200, 200);
+  color: black;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.pink-button:hover{
+  background: rgb(209, 241, 255); 
+}
+.pink-main a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+.pink-main a:hover{
+  color: rgb(121, 121, 121); 
+}
+
+.yellow-body{
+  background-image: url(background2.jpeg);
+  background-size: cover;
+  overflow: hidden;
+}
+.yellow-main{
+  background-color: rgba(251, 255, 194, 0.7);
+  margin-top: 20px;
+  border-radius: 30px;
+}
+.yellow-nav{
+  background: rgb(249, 255, 169);
+  font-weight: bold;
+  color: black;
+}
+.yellow-green-nav-a{
+  font-weight: bold;
+  color: black;
+}
+.yellow-green-nav-a:hover{
+  color: rgb(121, 121, 121); 
+}
+.saving-card{
+  background-color: rgb(249, 255, 169);
+  border: 2px solid rgb(242, 255, 53);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+.saving-card h3 {
+  margin-bottom: 0.5rem;
+}
+.saving-card small {
+  color: #666;
+}
+.admin-table, .admin-table tr, .admin-table th, .admin-table td{
+  border: 2px solid rgb(242, 255, 53);
+}
+.admin-table tr:nth-child(odd) {
+  background-color:rgb(249, 255, 169);
+}
+.admin-table tr:nth-child(even) {
+  background-color: white;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+.admin-table th,
+.admin-table td {
+  padding: 0.5rem;
+  text-align: left;
+}
+.admin-table th {
+  background: #f5f5f5;
+}
+
+.green-body{
+  background-image: url(background3.jpeg);
+  background-size: cover;
+  overflow: hidden;
+}
+.green-main{
+  background-color: rgba(209, 255, 199, 0.5);
+  margin-top: 20px;
+  border-radius: 30px;
+}
+.green-nav{
+  background: rgb(183, 255, 169);
+  font-weight: bold;
+  color: black;
+}
+.green-input, textarea{
+  border-radius: 10px;
+  border: 2px solid rgb(121, 255, 94); 
+}
+.green-input:focus, textarea:focus{
+  border: 2px solid rgb(121, 255, 94); 
+  background-color:rgb(209, 241, 255); 
+  border-radius: 10px;
+  outline: none;
+}
+.green-button{
+  background: rgb(158, 255, 138);
+  font-weight: bold;
+  color: black;
+  border-radius: 10px;
+}
+.green-button:hover{
+  background: rgb(209, 241, 255); 
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
 
 nav {
-  background: #333;
-  color: white;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -19,7 +159,6 @@ nav {
 }
 
 nav a {
-  color: white;
   text-decoration: none;
   margin-left: 1rem;
 }
@@ -49,48 +188,6 @@ textarea {
 
 button {
   padding: 0.5rem 1rem;
-  background: #333;
-  color: white;
   border: none;
   cursor: pointer;
-}
-
-button:hover {
-  background: #444;
-}
-
-.saving-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-}
-
-.donation-card h3 {
-  margin-bottom: 0.5rem;
-}
-
-.donation-card small {
-  color: #666;
-}
-
-.admin-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-}
-
-.admin-table th,
-.admin-table td {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-.admin-table th {
-  background: #f5f5f5;
-}
-
-.admin-table tr:nth-child(even) {
-  background: #f9f9f9;
 }

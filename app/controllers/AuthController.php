@@ -53,4 +53,10 @@ class AuthController {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result['count'] === 0;
     }
+
+    public function logout() {
+        session_destroy();
+        header('Location: login');
+        exit();
+    }
 }

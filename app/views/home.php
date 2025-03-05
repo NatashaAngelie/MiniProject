@@ -4,17 +4,17 @@
     <title>Home - Mini Tabungan</title>
     <link rel="stylesheet" href="public/css/style.css">
 </head>
-<body>
-    <nav>
+<body class="yellow-body">
+    <nav class="yellow-nav">
         <h1>Mini Tabungan</h1>
         <?php if(isset($_SESSION['user_id'])): ?>
             <div>
                 Welcome, <?php echo $_SESSION['user_name']; ?>
                 <?php if($_SESSION['user_role'] === 'admin'): ?>
-                    <a href="admin">Admin Dashboard</a>
+                    <a class="yellow-green-nav-a" href="admin">Admin Dashboard</a>
                 <?php endif; ?>
-                <a href="save">Save</a>
-                <a href="logout">Logout</a>
+                <a class="yellow-green-nav-a" href="save">Save</a>
+                <a class="yellow-green-nav-a" href="logout">Logout</a>
             </div>
         <?php else: ?>
             <div>
@@ -24,7 +24,7 @@
         <?php endif; ?>
     </nav>
 
-    <main>
+    <main class="yellow-main">
         <h2>Recent Savings</h2>
         <?php foreach($saving as $saving): ?>
             <div class="saving-card">
