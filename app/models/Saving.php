@@ -28,7 +28,7 @@ class Saving {
         if ($isAdmin) {
         $query = "SELECT d.*, u.name FROM " . $this->table . " d
                   JOIN users u ON d.user_id = u.id
-                  ORDER BY d.created_at DESC";
+                  ORDER BY d.created_at ASC";
         $stmt = $this->conn->prepare($query);
         }
 
@@ -36,7 +36,7 @@ class Saving {
             $query = "SELECT d.*, u.name FROM " . $this->table . " d
                       JOIN users u ON d.user_id = u.id
                       WHERE d.user_id = :user_id
-                      ORDER BY d.created_at DESC";
+                      ORDER BY d.created_at ASC";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         }
@@ -50,7 +50,7 @@ class Saving {
         $query = "SELECT d.*, u.name FROM " . $this->table . " d
                   JOIN users u ON d.user_id = u.id
                   WHERE d.user_id = :user_id
-                  ORDER BY d.created_at DESC";
+                  ORDER BY d.created_at ASC";
         
         $stmt = $this->conn->prepare($query); // Ubah dari $this->db ke $this->conn
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
@@ -62,7 +62,7 @@ class Saving {
         $query = "SELECT d.*, u.name FROM " . $this->table . " d
                   JOIN users u ON d.user_id = u.id
                   WHERE d.user_id = :user_id
-                  ORDER BY d.created_at DESC";
+                  ORDER BY d.created_at ASC";
         $stmt = $this->conn->prepare($query); // Ubah dari $this->db ke $this->conn
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->execute();
