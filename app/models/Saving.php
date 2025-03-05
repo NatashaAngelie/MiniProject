@@ -43,6 +43,19 @@ class Saving {
 
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $userId = $_SESSION['user_id'];
+
+        //Admin dan user hanya bisa melihat setoran mereka sendiri
+        $query = "SELECT d.*, u.name FROM " . $this->table . " d
+                  JOIN users u ON d.user_id = u.id
+                  WHERE d.user_id = :user_id
+                  ORDER BY d.created_at DESC";
+        
+        $stmt = $this->conn->prepare($query); // Ubah dari $this->db ke $this->conn
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getByUserId($userId) {
