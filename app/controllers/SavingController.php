@@ -17,8 +17,8 @@ class SavingController {
             $amount = $_POST['amount'];
             $message = $_POST['message'];    
 
-        //  $userId = $_SESSION['user_id'];
-         if ($this->savingModel->create($userId, $amount, $message)) { // FIX: pakai $userId
+        // Menyimpan data tabungan ke database
+        if ($this->savingModel->create($userId, $amount, $message)) { 
             header('Location: home');
             exit();
             }

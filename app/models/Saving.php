@@ -4,23 +4,28 @@ class Saving {
     private $table = 'savings';
 
     public function __construct($db) {
+        // Menyimpan koneksi database
         $this->conn = $db;
     }
 
     public function create($user_id, $amount, $message) {
+        // Query untuk menambahkan data tabungan ke dalam database
         $query = "INSERT INTO " . $this->table . " (user_id, amount, message) VALUES (:user_id, :amount, :message)";
         $stmt = $this->conn->prepare($query);
         
+        // Bind parameter untuk mencegah SQL injection
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':amount', $amount);
         $stmt->bindParam(':message', $message);
         
+        // Menjalankan query dan mengembalikan hasilnya
         if($stmt->execute()) {
             return true;
         }
         return false;
     }
 
+    // Mendapatkan ID pengguna dari sesi
     public function getAll() {
         $userId = $_SESSION['user_id'];
         $isAdmin = $_SESSION['user_role'] === 'admin';

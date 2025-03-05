@@ -1,23 +1,29 @@
 <?php
+//controller untuk mengelola proses autentikasi pengguna (login, register, dan logout).
 class AuthController {
     private $db;
     private $userModel;
 
     public function __construct() {
+        // Membuat koneksi ke database
         $database = new Database();
         $this->db = $database->connect();
+        // Bagian ini memungkinkan AuthController berkomunikasi dengan database untuk mengelola data pengguna.
         require_once 'app/models/user.php';
         $this->userModel = new User($this->db);
     }
 
     public function login() {
+        // Memastikan hanya tamu yang bisa mengakses halaman login
         require_once 'app/helpers/AuthMiddleware.php';
         AuthMiddleware::isGuest();
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Mengambil input email dan password dari pengguna
             $email = $_POST['email'];
             $password = $_POST['password'];
 
+            //Mengecek apakah email dan password yang dimasukkan pengguna cocok dengan data di database.
             if($this->userModel->login($email, $password)) {
                 header('Location: home');
                 exit();
